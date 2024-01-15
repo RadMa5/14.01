@@ -20,7 +20,37 @@ public class TeacherController{
                 int ch = sc.nextInt();
                 switch(ch){
                     case 1:
-                    TeacherView.AddContact();
+                        System.out.print("Enter the name: ");
+                        String name = sc.nextLine();
+                        System.out.print("Enter the surname: ");
+                        String surname = sc.nextLine();
+                        System.out.print("Enter the field of study: ");
+                        String sphereOfDuty = sc.nextLine();
+                        System.out.print("Enter the unique id: ");
+                        Integer id = sc.nextInt();
+                        Teacher te = new Teacher(name, surname, sphereOfDuty, id);
+                        TeacherService.AddContact(te);
+                        break;
+                    case 2:
+                        System.out.print("Enter the name: ");
+                        String name2 = sc.nextLine();
+                        System.out.print("Enter the surname: ");
+                        String surname2 = sc.nextLine();
+                        System.out.print("Enter the field of study: ");
+                        String sphereOfDuty2 = sc.nextLine();
+                        System.out.print("Enter the unique id: ");
+                        Integer id2 = sc.nextInt();
+                        Teacher te2 = new Teacher(name2, surname2, sphereOfDuty2, id2);
+                        TeacherService.RedactContact(id2, te2);
+                        break;
+                    case 3:
+                        System.out.print("Input the teacher's id: ");
+                        TeacherService.PrintInfo(sc.nextInt());
+                        break;
+                    case 4:
+                        TeacherService.PrintAll();
+                        break;
+                    
 
                 }
             } else {
