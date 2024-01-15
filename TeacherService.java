@@ -1,11 +1,7 @@
 import java.util.ArrayList;
 
-public class TeacherService extends Teacher{
+public class TeacherService{
     protected static ArrayList<Teacher> list;
-
-    public TeacherService(String name, String surname, String sphereOfDuty, int id) {
-        super(name, surname, sphereOfDuty, id);
-    }
 
     public static void Init(){
         list = new ArrayList<>();
@@ -26,8 +22,7 @@ public class TeacherService extends Teacher{
     public static void PrintAll(){
         ArrayList<Teacher> list = TeacherService.GetList();
         for (int i = 0; i < list.size(); i ++){
-            System.out.println("List of all teachers");
-            TeacherService.PrintInfo(i);
+            TeacherService.PrintInfo(i + 1);
         }
     }
 
